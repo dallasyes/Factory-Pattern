@@ -6,8 +6,16 @@ namespace FactoryPattern
         static void Main(string[] args)
         {
             Console.WriteLine("Please enter the number of tires on the vehicle: ");
-            VehicleFactory.GetVehicle(Console.ReadLine());
-            
+            IVehicle vehicle = VehicleFactory.GetVehicle(Console.ReadLine());
+
+            if (vehicle == null)
+            {
+                Console.WriteLine("No vehicle could be created");
+            }
+            else
+            {
+                vehicle.Drive();
+            }
         }
     }
 }

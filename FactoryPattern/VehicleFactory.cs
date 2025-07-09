@@ -14,6 +14,6 @@ public static class VehicleFactory
         {
             return new Car();
         }
-        else return null;
+        return null;
     }
 }
